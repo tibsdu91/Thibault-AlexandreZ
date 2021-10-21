@@ -1,3 +1,27 @@
+;; Lein Project test
+
+
+
+(defproject chatbot "0.1.0-SNAPSHOT"
+  :description "Chatbot clojure"
+  :url "https://github.com/tibsdu91/Thibault-AlexandreZ"
+  :license {:name "Eclipse Public License"
+            :url "https://www.eclipse.org/legal/epl-v10.html"}
+  :dependencies [[org.clojure/clojure "1.8.0"]]
+  :main ^:skip-aot chatbot.core
+  :target-path "target/%s"
+  :profiles {:uberjar {:aot :all}})
+
+
+
+
+
+
+
+
+
+
+
 ;; ALL THE LIBRARIES
 
 (def District #{"1" "2" "3" "4" "5" "6"})
