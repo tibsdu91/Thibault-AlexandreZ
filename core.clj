@@ -2,6 +2,7 @@
   (:gen-class))
 
 ;; ALL THE LIBRARIES
+;; All the trying libraries
 
 (def District #{"1" "2" "3" "4" "5" "6"})
 (def Parks #{:1 "Jardin Royal" :2 "Riegrovy sady" :3 "Rajská Zahrada" :4 "Central Park Pankrác" :5 "Sacré Coeur Park" :6 "Hvězda"})
