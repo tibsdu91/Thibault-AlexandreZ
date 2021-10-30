@@ -23,6 +23,14 @@
       (contains? District y) (println "Ok so there is a few places I can recommend you in District number" y)
       (contains? District y) (:y Parks))))
 
+(defn activities []
+  (println "Are you looking for specific things in parks? ?")
+  (let  [y (read-line)]
+    (cond
+      if (Positif y) 
+        (println "OK so ok what are you looking for in the park")
+          :else (Negatif y)
+             (println "OK have a nice day goodbye"))))
 
 
 (defn -main []
