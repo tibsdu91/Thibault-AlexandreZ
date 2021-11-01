@@ -1,0 +1,19 @@
+lein tree
+tree
+help
+--help
+-help
+lein -help
+quit
+(+ 2 3)
+(println "salut")
+(def mymap (:apple "very good taste" :banana "nice as well"))
+(def mymap {:apple "very good taste" :banana "nice as well"})
+(:banana mymap)
+quit
+run
+lein run
+(-main)
+test
+lein test
+(-main)
