@@ -21,12 +21,21 @@
 
 
 
-;;Fonction Exit à continuer/implémenter
+;;fonction exit , implementer negatif z
 (defn exit-f []
   (println "Do you want to end the research ?")
   (let [z (read-line)]
     (cond
-      (contains? Positif z)(println "Thank you, have a good day !"))))
+      (contains? Positif z) (println "Thank you, have a good day !"))))
+
+;;; réussi a être utilisé et a continuer 
+(defn activities []
+  (println "Are you looking for specific things in this park ?")
+  (let  [y (read-line)]
+    (cond
+      (contains? Positif y) (println "OK so ok what are you looking for in this park")
+      (contains? Exitline y) (exit-f))))
+
 
 
 
@@ -38,35 +47,25 @@
 
 
 
-
-
-;; Reussit a afficher parc spécifique pour numero de district
+;; Reussit a afficher parc spécifique et a continuer sur activities 
 (defn numer-f []
   (numer)
   (let [y (read-line)]
     (cond
       (contains? District y) (println "Ok so there is a few parks I can recommand you in District number" y "!")
-
+      (contains? Exitline y) (exit-f)
       :else (str (err-f) (numer-f)))
     (cond
-      (= y "4") (println "For instance, this one is near your position :" (:d Parks))
-      (= y "5") (println "For instance, this one is near your position :" (:e Parks))
-      (= y "6") (println "For instance, this one is near your position :" (:f Parks))
-      (= y "1") (println "For instance, this one is near your position :" (:a Parks))
-      (= y "2") (println "For instance, this one is near your position :" (:b Parks))
-      (= y "3") (println "For instance, this one is near your position :" (:c Parks))
-      )
-    ))
+      (= y "4") (println "For instance, this one is near your position :" (:d Parks) (str (activities))) 
+      (= y "5") (println "For instance, this one is near your position :" (:e Parks) (str (activities)))
+      (= y "6") (println "For instance, this one is near your position :" (:f Parks) (str (activities)))
+      (= y "1") (println "For instance, this one is near your position :" (:a Parks) (str (activities)))
+      (= y "2") (println "For instance, this one is near your position :" (:b Parks) (str (activities)))
+      (= y "3") (println "For instance, this one is near your position :" (:c Parks) (str (activities))))))
 
 
 
-;;; a utiliser quand on aura reussi a appeler le parc 
-(defn activities []
-  (println "Are you looking for specific things in this park ?")
-  (let  [y (read-line)]
-    (cond
-      (contains? Positif y) (println "OK so ok what are you looking for in this park")
-      (contains? Negatif y) (exit-f))))
+
 
 
 
@@ -77,5 +76,3 @@
     (println "Hello" x "!")
     (println "My purpose is to present you Prague and his surroundings")
     (numer-f)))
-
-
