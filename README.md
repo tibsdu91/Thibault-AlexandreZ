@@ -20,11 +20,11 @@ The chatbot is written in Clojure, a functional programming language running on 
 
 ## Usage
 
-
-> git clone   # Clone the github repository, request your Gituhub credentials.
-> cd /clojure-chatbot # Browse the project folder.
-> lein run # Run the chatbot and start interaction. Type :done at anytime to quit the app.
-
+```sh
+git clone https://github.com/tibsdu91/Thibault-AlexandreZ.git #Clone the github repository, request your Gituhub credentials.
+cd /chatbotclojure #Browse the project folder.
+lein run #Run the chatbot and start interaction. Type :done at anytime to quit the app.
+```
 
 
 ## Options
