@@ -43,7 +43,6 @@
 
 
 
-
 ;;; réussi a être utilisé et a continuer 
 (defn activities []
   (println "Are you looking for specific things in this park ?")
@@ -51,7 +50,6 @@
     (cond
       (contains? Positif y) (println "OK so what are you looking for in this park ?" (str (activities-f)))
       (contains? Exitline y) (exit-f))))
-
 
 
 
@@ -78,8 +76,6 @@
       (= y "1") (println "For instance, this one is near your position :" (:a Parks) (str (activities)))
       (= y "2") (println "For instance, this one is near your position :" (:b Parks) (str (activities)))
       (= y "3") (println "For instance, this one is near your position :" (:c Parks) (str (activities))))))
-
-
 
 
 
