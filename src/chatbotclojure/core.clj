@@ -12,8 +12,8 @@
 (def Parks {:a "Jardin Royal" :b "Riegrovy sady" :c "Rajská Zahrada"
             :d "Central Park Pankrác" :e "Sacré Coeur Park" :f "Hvězda"})
 
-(def JardinRoyal #{"Bike" "WC" "Dog" "Run" "Skate"})
-(def RiegrovySady #{"Playfield" "WC" "Dog" "Run" "Skate"})
+(def JardinRoyal #{"Bike" "bike" "WC" "wc" "Dog" "dog" "Run" "run"})
+(def RiegrovySady #{"Playfield" "playfield" "WC" "wc" "Dog" "dog" "Run" "run" "Skate" "skate"})
 
 (def Positif #{"yeah" "Y" "yes" "OK" "y" "ok" "Yes" "Yeah"})
 (def Negatif #{"n" "nope" "not" "Nope" "Not" "N" "no" "No"})
