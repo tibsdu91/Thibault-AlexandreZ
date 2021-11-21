@@ -30,6 +30,11 @@ lein run #Run the chatbot and start interaction. Type :done at anytime to quit t
 
 Thibault Masse & Alexandre Zouaki
 
+## GitHub Pages
+To get more info, here is a link to our GitHub Pages :
+
+https://tibsdu91.github.io/Thibault-AlexandreZ/
+
 ## License
 
 
