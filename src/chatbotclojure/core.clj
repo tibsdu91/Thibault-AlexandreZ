@@ -5,15 +5,16 @@
 ;; Adding some hobbies
 
 
-
-(def Hobbies #{"Bike" "Playfield" "Street Workout" "Workout" "WC" "Dog" "Run" "Skate"})
-
 (def District #{:a "1" :b "2" :c "3" :d "4" :e "5" :f "6"})
-(def Parks {:a "Jardin Royal" :b "Riegrovy sady" :c "Rajská Zahrada"
-            :d "Central Park Pankrác" :e "Sacré Coeur Park" :f "Hvězda"})
+(def Parks {:a "Bertramka" :b "Frantiskanska-Zahrada" :c "Obora-Hvezda"
+            :d "Kampa" :e "Kinskeho-Zahrada" :f "Kamovka"})
 
-(def JardinRoyal #{"Bike" "bike" "WC" "wc" "Dog" "dog" "Run" "run"})
-(def RiegrovySady #{"Playfield" "playfield" "WC" "wc" "Dog" "dog" "Run" "run" "Skate" "skate"})
+(def Bertramka #{"Bike" "bike" "WC" "wc" "Sports" "sports" "Run" "run" "Playground" "playground" "parking" "Parking"})
+(def Frantiskanska-Zahrada #{"Playground" "playground" "WC" "wc" "Bike" "bike"})
+(def Obora-Hvezda #{"Wc" "wc" "Bike" "bike" "ski" "Ski" "Playground" "playground" "dog" "Dog" "parking" "Parking"})
+(def Kampa #{"Wc" "wc" "Bike" "bike" "Skate" "skate" "playground" "Playground"})
+(def Kinskeho-Zahrada #{"Wc" "wc" "Playground" "playground" "parking" "Parking"})
+(def Klamovka #{"Wc" "wc" "Bike" "bike" "Sports" "sport" "Running" "running" "dog" "Dog" "Playground" "playground" "restaurant" "Restaurant"})
 
 (def Positif #{"yeah" "Y" "yes" "OK" "y" "ok" "Yes" "Yeah"})
 (def Negatif #{"n" "nope" "not" "Nope" "Not" "N" "no" "No"})
@@ -35,33 +36,77 @@
   (let [z (read-line)]
     (newline) (Thread/sleep 1000)
     (cond
-      (contains? Positif z) (println "Thank you, have a good day !"))))
+      (contains? Positif z) (println "Thank you, have a good day !")
+      )))
 
 
 ;;; One Function activities per park 
 
-(defn activitiesJardinRoyal []
+(defn activitiesBertramka []
   (let [b (read-line)]
     (cond
       (newline) (Thread/sleep 1000)
-      (contains? JardinRoyal b) [(println "Yes there is a" b "area in this park"
-                                          "Anything else ?")(activitiesJardinRoyal)]
-      (contains? Exitline b)(exit-f)
-      (contains? Negatif b)(exit-f)
-      :else [(println "Sorry but there is no" b "area in this park" 
-                      "Anything else ?")(activitiesJardinRoyal)])))
-
-(defn activitiesRiegrovySady []
-  (let [b (read-line)]
-    (cond
-      (newline) (Thread/sleep 1000)
-      (contains? RiegrovySady b) [(println "Yes there is a" b "area in this park"
-                                          "Anything else ?") (activitiesRiegrovySady)]
+      (contains? Bertramka b) [(println "Yes there is a" b "area in this park."
+                                        "Anything else ?") (activitiesBertramka)]
       (contains? Exitline b) (exit-f)
       (contains? Negatif b) (exit-f)
-      :else [(println "Sorry but there is no" b "area in this park"
-                      "Anything else ?") (activitiesRiegrovySady)])))
+      :else [(println "Sorry but there is no" b "area in this park."
+                      "Anything else ?") (activitiesBertramka)])))
 
+(defn activitiesFrantiskanska-Zahrada []
+  (let [b (read-line)]
+    (cond
+      (newline) (Thread/sleep 1000)
+      (contains? Frantiskanska-Zahrada b) [(println "Yes there is a" b "area in this park."
+                                                    "Anything else ?") (activitiesFrantiskanska-Zahrada)]
+      (contains? Exitline b) (exit-f)
+      (contains? Negatif b) (exit-f)
+      :else [(println "Sorry but there is no" b "area in this park."
+                      "Anything else ?") (activitiesFrantiskanska-Zahrada)])))
+
+(defn activitiesObora-Hvezda []
+  (let [b (read-line)]
+    (cond
+      (newline) (Thread/sleep 1000)
+      (contains? Obora-Hvezda b) [(println "Yes there is a" b "area in this park."
+                                           "Anything else ?") (activitiesObora-Hvezda)]
+      (contains? Exitline b) (exit-f)
+      (contains? Negatif b) (exit-f)
+      :else [(println "Sorry but there is no" b "area in this park."
+                      "Anything else ?") (activitiesObora-Hvezda)])))
+
+(defn activitiesKampa []
+  (let [b (read-line)]
+    (cond
+      (newline) (Thread/sleep 1000)
+      (contains? Kampa b) [(println "Yes there is a" b "area in this park."
+                                           "Anything else ?") (activitiesKampa)]
+      (contains? Exitline b) (exit-f)
+      (contains? Negatif b) (exit-f)
+      :else [(println "Sorry but there is no" b "area in this park."
+                      "Anything else ?") (activitiesKampa)])))
+
+(defn activitiesKinskeho-Zahrada []
+  (let [b (read-line)]
+    (cond
+      (newline) (Thread/sleep 1000)
+      (contains? Kinskeho-Zahrada b) [(println "Yes there is a" b "area in this park."
+                                           "Anything else ?") (activitiesKinskeho-Zahrada)]
+      (contains? Exitline b) (exit-f)
+      (contains? Negatif b) (exit-f)
+      :else [(println "Sorry but there is no" b "area in this park."
+                      "Anything else ?") (activitiesKinskeho-Zahrada)])))
+
+(defn activitiesKlamovka []
+  (let [b (read-line)]
+    (cond
+      (newline) (Thread/sleep 1000)
+      (contains? Klamovka b) [(println "Yes there is a" b "area in this park."
+                                           "Anything else ?") (activitiesKlamovka)]
+      (contains? Exitline b) (exit-f)
+      (contains? Negatif b) (exit-f)
+      :else [(println "Sorry but there is no" b "area in this park."
+                      "Anything else ?") (activitiesKlamovka)])))
 
 
 
@@ -77,10 +122,13 @@
       (contains? Positif a) (println "OK so what are you looking for in this park ?")
       (contains? Exitline a) (exit-f)
       (contains? Negatif a) (exit-f)))
-    (cond
-      (= y "1") (activitiesJardinRoyal)
-      (= y "2") (activitiesRiegrovySady)))
-
+  (cond
+    (= y "1") (activitiesBertramka)
+    (= y "2") (activitiesFrantiskanska-Zahrada)
+    (= y "3") (activitiesObora-Hvezda)
+    (= y "4") (activitiesKampa)
+    (= y "5") (activitiesKinskeho-Zahrada)
+    (= y "6") (activitiesKlamovka)))
 
 
 
@@ -106,7 +154,6 @@
 
 
 
- 
 (defn numer-f []
   (numer)
   (let [y (read-line)]
@@ -116,13 +163,6 @@
                               (numer-2 y)]
       (contains? Exitline y) (exit-f)
       :else (str (err-f) (numer-f)))))
-
-
-
-
-
-
-
 
 
 
