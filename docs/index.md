@@ -8,16 +8,27 @@ Our team of hobby devs are joining the competition, and we want to present a cha
 
 The current chatbot will follow the idea of the classical ELIZA system.
 
-### Usage
+### Running the programm
 
 The chatbot is written in Clojure, a functional programming language running on Java Virtual Machine. Depending on your operating system different steps are necessary to install the required components:
 
-Java Development Kit (JDK) version 11 or newer.
+1. Java Development Kit (JDK) version 11 or newer.
 
-Leiningen
+2. Leiningen
 
-A Command Line Interface (CLI)
+3. A Command Line Interface (CLI)
 
+### Usage
+
+In order to start the chatbot, here is the command line to enter :
+
+```sh
+
+git clone https://github.com/tibsdu91/Thibault-AlexandreZ.git  #Clone the github repository, request your Gituhub credentials.
+cd /chatbotclojure  #Browse the project folder.
+lein run  #Run the chatbot and start interaction. Type :done at anytime to quit the app.
+
+```
 ### Main
 
 Here is the main function which begin the chatbot.
@@ -35,7 +46,6 @@ Here is the main function which begin the chatbot.
     (newline)
     (println "My purpose is to present you Prague and his surroundings")
     (numer-f)))
-
 
 ```
 
