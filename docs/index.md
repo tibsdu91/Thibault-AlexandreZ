@@ -1,37 +1,42 @@
-## Welcome to GitHub Pages
+## Park Chatbot in CLojure
 
-You can use the [editor on GitHub](https://github.com/tibsdu91/Thibault-AlexandreZ/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+### Introduction
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The Prague Municipality decided to promote the many natural landscapes in Prague (as Stromovka or Prokopske udoli). As they want to open the opportunity for new perspectives on tourist guides, they ask people to join a competition.
 
-### Markdown
+Our team of hobby devs are joining the competition, and we want to present a chatbot solution that would seamlessly allow the user to communicate about his walk in the Prague nature.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The current chatbot will follow the idea of the classical ELIZA system.
+
+### Usage
+
+The chatbot is written in Clojure, a functional programming language running on Java Virtual Machine. Depending on your operating system different steps are necessary to install the required components:
+
+Java Development Kit (JDK) version 11 or newer.
+
+Leiningen
+
+A Command Line Interface (CLI)
+
+### Main
+
+Here is the main function which begin the chatbot.
 
 ```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+(defn -main []
+  (newline)
+  (println "Good morning to you ! What's your name ?")
+  (Thread/sleep 1000)
+  (let [x (read-line)]
+    (newline)
+    (println "Hello" x "!")
+    (Thread/sleep 1000)
+    (newline)
+    (println "My purpose is to present you Prague and his surroundings")
+    (numer-f)))
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/tibsdu91/Thibault-AlexandreZ/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
