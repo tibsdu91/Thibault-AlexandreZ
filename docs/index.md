@@ -1,4 +1,4 @@
-## Park Chatbot in CLojure
+## Park Chatbot in Clojure
 
 ### Introduction
 
@@ -22,7 +22,7 @@ A Command Line Interface (CLI)
 
 Here is the main function which begin the chatbot.
 
-```markdown
+```
 
 (defn -main []
   (newline)
