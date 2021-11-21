@@ -22,7 +22,7 @@ A Command Line Interface (CLI)
 
 Here is the main function which begin the chatbot.
 
-```
+```Clj
 
 (defn -main []
   (newline)
