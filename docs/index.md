@@ -29,7 +29,7 @@ cd /chatbotclojure  #Browse the project folder.
 lein run  #Run the chatbot and start interaction. Type :done at anytime to quit the app.
 
 ```
-### Main
+### Main function
 
 Here is the main function which begin the chatbot.
 
@@ -49,4 +49,27 @@ Here is the main function which begin the chatbot.
 
 ```
 
+### Activities function
+
+In order to give information to the user about activities to do in the park, we had to create one function per park linking the different librairies and the user input. Here is an example of one function activities:
+
+```Clojure
+
+(defn activitiesKinskeho-Zahrada []
+  (let [b (read-line)]
+    (cond
+      (newline) (Thread/sleep 1000)
+      (contains? Kinskeho-Zahrada b) [(println "Yes there is a" b "area in this park."
+                                           "Anything else ?") (activitiesKinskeho-Zahrada)]
+      (contains? Exitline b) (exit-f)
+      (contains? Negatif b) (exit-f)
+      :else [(println "Sorry but there is no" b "area in this park."
+                      "Anything else ?") (activitiesKinskeho-Zahrada)])))
+
+```
+
+
+### Authors
+
+Thibault Masse & Alexandre Zouaki
 

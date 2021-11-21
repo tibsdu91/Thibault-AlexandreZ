@@ -1,0 +1,56 @@
+; This is the Calva evaluation results output window.
+; TIPS: The keyboard shortcut `ctrl+alt+c o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Jacking in...
+; Starting Jack-in Terminal: cmd.exe /d /c lein update-in :dependencies conj [nrepl,"0.8.3"] -- update-in :plugins conj [cider/cider-nrepl,"0.26.0"] -- update-in [:repl-options,:nrepl-middleware] conj '["cider.nrepl/cider-middleware"]' -- repl :headless
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS: 
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉chatbotclojure.core꞉>  ; Use `alt+enter` to evaluate
+; Jack-in done.
+clj꞉chatbotclojure.core꞉> 
+#'chatbotclojure.core/-main
+clj꞉chatbotclojure.core꞉> (-main)
+
+Good morning to you ! What's your name ?
+
+Hello alex !
+
+My purpose is to present you Prague and his surroundings
+
+In which number of District do you live ?
+
+Ok so there is a few parks I can recommand you in District number 5 !
+
+For instance, this one is near your position : Kinskeho-Zahrada
+
+Are you looking for specific things in this park ? [Y/N]
+
+OK so what are you looking for in this park ?
+
+Sorry but there is no Bike area in this park. Anything else ?
+
+Sorry but there is no WC area in this park. Anything else ?
+
+Sorry but there is no BC area in this park. Anything else ?
+
+Yes there is a Wc area in this park. Anything else ?
+
+Yes there is a wc area in this park. Anything else ?
+
+Sorry but there is no park area in this park. Anything else ?
+Sending interrupt.
+; Evaluation was interrupted
+clj꞉chatbotclojure.core꞉> 
+; Execution error (InterruptedException) at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject/await (AbstractQueuedSynchronizer.java:1638).
+; null
+clj꞉chatbotclojure.core꞉> 
