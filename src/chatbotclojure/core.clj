@@ -1,8 +1,8 @@
 (ns chatbotclojure.core
   (:gen-class))
 
-;; ALL THE LIBRARIES
-;; Adding some hobbies
+;; -- ALL THE LIBRARIES --
+
 
 
 (def District #{:a "1" :b "2" :c "3" :d "4" :e "5" :f "6"})
@@ -22,7 +22,7 @@
 (def Exitline #{"exit" "Exit" "Quit" "quit" "End" "end" "bye" "Bye"})
 
 
-;; ALL THE FUNCTIONS
+;; -- ALL THE FUNCTIONS --
 (defn err-f []
   (println "I didn't understand that, sorry"))
 
@@ -40,7 +40,7 @@
       )))
 
 
-;;; One Function activities per park 
+;;; -- One Function activities per park -- 
 
 (defn activitiesBertramka []
   (let [b (read-line)]
@@ -115,7 +115,7 @@
 ;;;Launch the activity search and lead to the right park
 (defn activities [y]
   (newline) (Thread/sleep 1000)
-  (println "Are you looking for specific things in this park ? [Y/N]")
+  (println "Are you looking for specific activities to do in this park ? [Y/N]")
   (let  [a (read-line)]
     (cond
       (newline) (Thread/sleep 1000)
@@ -130,7 +130,7 @@
     (= y "5") (activitiesKinskeho-Zahrada)
     (= y "6") (activitiesKlamovka)))
 
-
+;;;-- End of the function activities per park --
 
 
 ;;Allows to do a loop 
@@ -165,7 +165,7 @@
       :else (str (err-f) (numer-f)))))
 
 
-
+;;; -- Main function that starts the bot --
 (defn -main []
   (newline)
   (println "Good morning to you ! What's your name ?")
