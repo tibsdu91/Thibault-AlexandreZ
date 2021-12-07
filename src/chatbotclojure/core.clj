@@ -9,17 +9,26 @@
 (def Parks {:a "Bertramka" :b "Frantiskanska-Zahrada" :c "Obora-Hvezda"
             :d "Kampa" :e "Kinskeho-Zahrada" :f "Kamovka"})
 
-(def Bertramka #{"Bike" "bike" "WC" "wc" "Sports" "sports" "Run" "run" "Playground" "playground" "parking" "Parking"})
-(def Frantiskanska-Zahrada #{"Playground" "playground" "WC" "wc" "Bike" "bike"})
-(def Obora-Hvezda #{"Wc" "wc" "Bike" "bike" "ski" "Ski" "Playground" "playground" "dog" "Dog" "parking" "Parking"})
-(def Kampa #{"Wc" "wc" "Bike" "bike" "Skate" "skate" "playground" "Playground"})
-(def Kinskeho-Zahrada #{"Wc" "wc" "Playground" "playground" "parking" "Parking"})
-(def Klamovka #{"Wc" "wc" "Bike" "bike" "Sports" "sport" "Running" "running" "dog" "Dog" "Playground" "playground" "restaurant" "Restaurant"})
+(def Bertramka #{"Bike" "bike" "WC" "wc" "Sports" "sports" "Run" "run" "Playground" "playground" "parking" "Parking" "Pikachu" "pikachu" "Charmander" "charmander" "Bulbasaur" "bulbasaur"})
+(def Frantiskanska-Zahrada #{"Playground" "playground" "WC" "wc" "Bike" "bike" "Squirtle" "squirtle"})
+(def Obora-Hvezda #{"Wc" "wc" "Bike" "bike" "ski" "Ski" "Playground" "playground" "dog" "Dog" "parking" "Parking" "Charmander" "charmender" "Bulbasaur" "bulbasaur"})
+(def Kampa #{"Wc" "wc" "Bike" "bike" "Skate" "skate" "playground" "Playground" "Pikachu" "pikachu" "Squirtle" "squirtle"})
+(def Kinskeho-Zahrada #{"Wc" "wc" "Playground" "playground" "parking" "Parking" "Pikachu" "pikachu" "Charmander" "charmender"})
+(def Klamovka #{"Wc" "wc" "Bike" "bike" "Sports" "sport" "Running" "running" "dog" "Dog" "Playground" "playground" "restaurant" "Restaurant" "Bulbasaur" "bulbasaur" "Squirtle" "squirtle"})
 
 (def Positif #{"yeah" "Y" "yes" "OK" "y" "ok" "Yes" "Yeah"})
 (def Negatif #{"n" "nope" "not" "Nope" "Not" "N" "no" "No"})
 
 (def Exitline #{"exit" "Exit" "Quit" "quit" "End" "end" "bye" "Bye"})
+
+(def Pikachu #{"yellow" "Yellow" "Electric" "electric"})
+(def Charmander #{"Orange" "orange" "Fire" "fire"})
+(def Bulbasaur #{"Green" "green" "Grass" "grass"})
+(def Squirtle #{"Blue" "blue" "Water" "water"})
+
+
+
+
 
 
 ;; -- ALL THE FUNCTIONS --
@@ -36,8 +45,7 @@
   (let [z (read-line)]
     (newline) (Thread/sleep 1000)
     (cond
-      (contains? Positif z) (println "Thank you, have a good day !")
-      )))
+      (contains? Positif z) (println "Thank you, have a good day !"))))
 
 
 ;;; -- One Function activities per park -- 
@@ -80,7 +88,7 @@
     (cond
       (newline) (Thread/sleep 1000)
       (contains? Kampa b) [(println "Yes there is a" b "area in this park."
-                                           "Anything else ?") (activitiesKampa)]
+                                    "Anything else ?") (activitiesKampa)]
       (contains? Exitline b) (exit-f)
       (contains? Negatif b) (exit-f)
       :else [(println "Sorry but there is no" b "area in this park."
@@ -91,7 +99,7 @@
     (cond
       (newline) (Thread/sleep 1000)
       (contains? Kinskeho-Zahrada b) [(println "Yes there is a" b "area in this park."
-                                           "Anything else ?") (activitiesKinskeho-Zahrada)]
+                                               "Anything else ?") (activitiesKinskeho-Zahrada)]
       (contains? Exitline b) (exit-f)
       (contains? Negatif b) (exit-f)
       :else [(println "Sorry but there is no" b "area in this park."
@@ -102,7 +110,7 @@
     (cond
       (newline) (Thread/sleep 1000)
       (contains? Klamovka b) [(println "Yes there is a" b "area in this park."
-                                           "Anything else ?") (activitiesKlamovka)]
+                                       "Anything else ?") (activitiesKlamovka)]
       (contains? Exitline b) (exit-f)
       (contains? Negatif b) (exit-f)
       :else [(println "Sorry but there is no" b "area in this park."
@@ -177,8 +185,4 @@
     (newline)
     (println "My purpose is to present you Prague and his surroundings")
     (numer-f)))
-
-
-
-
 
