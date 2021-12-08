@@ -2,11 +2,11 @@
 
 ### Introduction
 
-The Prague Municipality decided to promote the many natural landscapes in Prague (as Stromovka or Prokopske udoli). As they want to open the opportunity for new perspectives on tourist guides, they ask people to join a competition.
-
-Our team of hobby devs are joining the competition, and we want to present a chatbot solution that would seamlessly allow the user to communicate about his walk in the Prague nature.
-
-The current chatbot will follow the idea of the classical ELIZA system.
+The city of Prague likes our chatbot application and it got implemented. Nevertheless, after a few
+months of usage, the city would like us to enhance it with more interactive features, namely, they
+would like to provide the users with the possibility to identify pokemon in the
+parks. They ask our team to choose a domain and demonstrate on it how this enhanced feature
+would work and thus allow A/B testing with the users to see how they like it.
 
 ### Running the programm
 
