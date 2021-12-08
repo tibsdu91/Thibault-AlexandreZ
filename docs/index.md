@@ -33,7 +33,7 @@ lein run  #Run the chatbot and start interaction. Type :done at anytime to quit 
 
 Here is the main function which begin the chatbot.
 
-```Clojure
+```clojure
 
 (defn -main []
   (newline)
@@ -53,7 +53,7 @@ Here is the main function which begin the chatbot.
 
 In order to give information to the user about activities to do in the park, we had to create one function per park linking the different librairies and the user input. Here is an example of one function activities:
 
-```Clojure
+```clojure
 
 (defn activitiesKinskeho-Zahrada []
   (let [b (read-line)]
@@ -83,5 +83,5 @@ In order to give information about pokemon that are in the parks, we had to crea
 
 ### Authors
 
-Thibault Masse & Alexandre Zouaki
+Thibault Masse & Alexandre Zouaki & Nicolas Felis
 
