@@ -22,7 +22,7 @@ The chatbot is written in Clojure, a functional programming language running on 
 
 In order to start the chatbot, here is the command line to enter :
 
-```sh
+```shell
 
 git clone https://github.com/tibsdu91/Thibault-AlexandreZ.git  #Clone the github repository, request your Gituhub credentials.
 cd /chatbotclojure  #Browse the project folder.
