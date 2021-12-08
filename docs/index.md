@@ -68,6 +68,18 @@ In order to give information to the user about activities to do in the park, we 
 
 ```
 
+### Pokemon Library
+
+In order to give information about pokemon that are in the parks, we had to create libraries for each pokemon we can find in the parks. Here is the libraries we created :
+```Clojure
+
+(def Pikachu #{"yellow" "Yellow" "Electric" "electric"})
+(def Charmander #{"Orange" "orange" "Fire" "fire"})
+(def Bulbasaur #{"Green" "green" "Grass" "grass"})
+(def Squirtle #{"Blue" "blue" "Water" "water"})
+
+```
+
 
 ### Authors
 
