@@ -16,17 +16,20 @@
 (def Kinskeho-Zahrada #{"Wc" "wc" "Playground" "playground" "parking" "Parking" "Pikachu" "pikachu" "Charmander" "charmender"})
 (def Klamovka #{"Wc" "wc" "Bike" "bike" "Sports" "sport" "Running" "running" "dog" "Dog" "Playground" "playground" "restaurant" "Restaurant" "Bulbasaur" "bulbasaur" "Squirtle" "squirtle"})
 
-(def Positif #{"yeah" "Y" "yes" "OK" "y" "ok" "Yes" "Yeah"})
-(def Negatif #{"n" "nope" "not" "Nope" "Not" "N" "no" "No"})
+(def Positive #{"yeah" "Y" "yes" "OK" "y" "ok" "Yes" "Yeah"})
+(def Negative #{"n" "nope" "not" "Nope" "Not" "N" "no" "No"})
 
 (def Exitline #{"exit" "Exit" "Quit" "quit" "End" "end" "bye" "Bye"})
 
+
+;Pokemon Library
 (def Pikachu #{"yellow" "Yellow" "Electric" "electric"})
 (def Charmander #{"Orange" "orange" "Fire" "fire"})
 (def Bulbasaur #{"Green" "green" "Grass" "grass"})
 (def Squirtle #{"Blue" "blue" "Water" "water"})
 
 
+;; -- END OF THE LIBRAIRY --
 
 
 
@@ -45,76 +48,152 @@
   (let [z (read-line)]
     (newline) (Thread/sleep 1000)
     (cond
-      (contains? Positif z) (println "Thank you, have a good day !"))))
+      (contains? Positive z) (println "Thank you, have a good day !"))))
 
 
-;;; -- One Function activities per park -- 
+;; -- ONE FUNCTION PER PARK --
 
-(defn activitiesBertramka []
+(defn pokemonBert []
+  (let [c (read-line)]
+    (newline)(Thread/sleep 1000)
+    (cond
+      (contains? Bertramka c) (println "Yes, there is some " c "in Bertramka")
+      (contains? Exitline c) (exit-f)
+      :else (println "This pokemon cannot be in Bertramka"))))
+
+(defn pokemonFran []
+  (let [c (read-line)]
+    (newline)(Thread/sleep 1000)
+    (cond
+      (contains? Bertramka c) (println "Yes, there is some " c "in Frantiskanska-Zahrada")
+      (contains? Exitline c) (exit-f)
+      :else (println "This pokemon cannot be in Frantiskanska-Zahrada"))))
+
+(defn pokemonObor []
+  (let [c (read-line)]
+    (newline)(Thread/sleep 1000)
+    (cond
+      (contains? Bertramka c) (println "Yes, there is some " c "in Obora-Hvezda")
+      (contains? Exitline c) (exit-f)
+      :else (println "This pokemon cannot be in Obora-Hvezda"))))
+
+(defn pokemonKamp []
+  (let [c (read-line)]
+    (newline)(Thread/sleep 1000)
+    (cond
+      (contains? Bertramka c) (println "Yes, there is some " c "in Kampa")
+      (contains? Exitline c) (exit-f)
+      :else (println "This pokemon cannot be in Kampa"))))
+
+(defn pokemonKins []
+  (let [c (read-line)]
+    (newline)(Thread/sleep 1000)
+    (cond
+      (contains? Bertramka c) (println "Yes, there is some " c "in Kinskeho-Zahrada")
+      (contains? Exitline c) (exit-f)
+      :else (println "This pokemon cannot be in Kinskeho-Zahrada"))))
+
+(defn pokemonKlam []
+  (let [c (read-line)]
+    (newline)(Thread/sleep 1000)
+    (cond
+      (contains? Bertramka c) (println "Yes, there is some " c "in Klamovka")
+      (contains? Exitline c) (exit-f)
+      :else (println "This pokemon cannot be in Klamovka"))))
+
+
+(defn whatPokemon [y]
+  (newline)
+  (println "What was the of name the Pokemon ?")
+  (Thread/sleep 1000)
+  (cond
+    (= y "1") (pokemonBert)
+    (= y "2") (pokemonFran)
+    (= y "3") (pokemonObor)
+    (= y "4") (pokemonKamp)
+    (= y "5") (pokemonKins)
+    (= y "6") (pokemonKlam)))
+
+
+
+(defn pokemonSight [y]
+  (newline)
+  (println "Did you see some kind of Pokemon ?")
+  (let [a (read-line)]
+    (newline) (Thread/sleep 1000)
+    (cond
+      (contains? Positive a) (whatPokemon y)
+      (contains? Negative a) (exit-f))))
+
+
+
+
+
+(defn activitiesBertramka [y]
   (let [b (read-line)]
     (cond
       (newline) (Thread/sleep 1000)
       (contains? Bertramka b) [(println "Yes there is a" b "area in this park."
-                                        "Anything else ?") (activitiesBertramka)]
+                                        "Anything else ?") (activitiesBertramka y)]
       (contains? Exitline b) (exit-f)
-      (contains? Negatif b) (exit-f)
+      (contains? Negative b) (pokemonSight y)
       :else [(println "Sorry but there is no" b "area in this park."
-                      "Anything else ?") (activitiesBertramka)])))
+                      "Anything else ?") (activitiesBertramka y)])))
 
-(defn activitiesFrantiskanska-Zahrada []
+(defn activitiesFrantiskanska-Zahrada [y]
   (let [b (read-line)]
     (cond
       (newline) (Thread/sleep 1000)
       (contains? Frantiskanska-Zahrada b) [(println "Yes there is a" b "area in this park."
-                                                    "Anything else ?") (activitiesFrantiskanska-Zahrada)]
+                                                    "Anything else ?") (activitiesFrantiskanska-Zahrada y)]
       (contains? Exitline b) (exit-f)
-      (contains? Negatif b) (exit-f)
+      (contains? Negative b) (exit-f)
       :else [(println "Sorry but there is no" b "area in this park."
-                      "Anything else ?") (activitiesFrantiskanska-Zahrada)])))
+                      "Anything else ?") (activitiesFrantiskanska-Zahrada y)])))
 
-(defn activitiesObora-Hvezda []
+(defn activitiesObora-Hvezda [y]
   (let [b (read-line)]
     (cond
       (newline) (Thread/sleep 1000)
       (contains? Obora-Hvezda b) [(println "Yes there is a" b "area in this park."
-                                           "Anything else ?") (activitiesObora-Hvezda)]
+                                           "Anything else ?") (activitiesObora-Hvezda y)]
       (contains? Exitline b) (exit-f)
-      (contains? Negatif b) (exit-f)
+      (contains? Negative b) (pokemonSight y)
       :else [(println "Sorry but there is no" b "area in this park."
-                      "Anything else ?") (activitiesObora-Hvezda)])))
+                      "Anything else ?") (activitiesObora-Hvezda y)])))
 
-(defn activitiesKampa []
+(defn activitiesKampa [y]
   (let [b (read-line)]
     (cond
       (newline) (Thread/sleep 1000)
       (contains? Kampa b) [(println "Yes there is a" b "area in this park."
-                                    "Anything else ?") (activitiesKampa)]
+                                    "Anything else ?") (activitiesKampa y)]
       (contains? Exitline b) (exit-f)
-      (contains? Negatif b) (exit-f)
+      (contains? Negative b) (pokemonSight y)
       :else [(println "Sorry but there is no" b "area in this park."
-                      "Anything else ?") (activitiesKampa)])))
+                      "Anything else ?") (activitiesKampa y)])))
 
-(defn activitiesKinskeho-Zahrada []
+(defn activitiesKinskeho-Zahrada [y]
   (let [b (read-line)]
     (cond
       (newline) (Thread/sleep 1000)
       (contains? Kinskeho-Zahrada b) [(println "Yes there is a" b "area in this park."
-                                               "Anything else ?") (activitiesKinskeho-Zahrada)]
+                                               "Anything else ?") (activitiesKinskeho-Zahrada y)]
       (contains? Exitline b) (exit-f)
-      (contains? Negatif b) (exit-f)
+      (contains? Negative b) (pokemonSight y)
       :else [(println "Sorry but there is no" b "area in this park."
-                      "Anything else ?") (activitiesKinskeho-Zahrada)])))
+                      "Anything else ?") (activitiesKinskeho-Zahrada y)])))
 
-(defn activitiesKlamovka []
+(defn activitiesKlamovka [y]
   (let [b (read-line)]
     (cond
       (newline) (Thread/sleep 1000)
       (contains? Klamovka b) [(println "Yes there is a" b "area in this park."
-                                       "Anything else ?") (activitiesKlamovka)]
+                                       "Anything else ?") (activitiesKlamovka y)]
       (contains? Exitline b) (exit-f)
-      (contains? Negatif b) (exit-f)
+      (contains? Negative b) (pokemonSight y)
       :else [(println "Sorry but there is no" b "area in this park."
-                      "Anything else ?") (activitiesKlamovka)])))
+                      "Anything else ?") (activitiesKlamovka y)])))
 
 
 
@@ -127,18 +206,18 @@
   (let  [a (read-line)]
     (cond
       (newline) (Thread/sleep 1000)
-      (contains? Positif a) (println "OK so what are you looking for in this park ?")
+      (contains? Positive a) (println "OK so what are you looking for in this park ?")
       (contains? Exitline a) (exit-f)
-      (contains? Negatif a) (exit-f)))
+      (contains? Negative a) (pokemonSight y)))
   (cond
-    (= y "1") (activitiesBertramka)
-    (= y "2") (activitiesFrantiskanska-Zahrada)
-    (= y "3") (activitiesObora-Hvezda)
-    (= y "4") (activitiesKampa)
-    (= y "5") (activitiesKinskeho-Zahrada)
-    (= y "6") (activitiesKlamovka)))
+    (= y "1") (activitiesBertramka y)
+    (= y "2") (activitiesFrantiskanska-Zahrada y)
+    (= y "3") (activitiesObora-Hvezda y)
+    (= y "4") (activitiesKampa y)
+    (= y "5") (activitiesKinskeho-Zahrada y)
+    (= y "6") (activitiesKlamovka y)))
 
-;;;-- End of the function activities per park --
+;; -- END OF THE FUNCTION PER PARK --
 
 
 ;;Allows to do a loop 
@@ -158,8 +237,6 @@
     (= y "2") (println "For instance, this one is near your position :" (:b Parks))
     (= y "3") (println "For instance, this one is near your position :" (:c Parks)))
   (activities y))
-
-
 
 
 (defn numer-f []
@@ -185,4 +262,5 @@
     (newline)
     (println "My purpose is to present you Prague and his surroundings")
     (numer-f)))
+
 
