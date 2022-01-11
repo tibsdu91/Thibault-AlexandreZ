@@ -79,6 +79,84 @@ In order to give information about pokemon that are in the parks, we had to crea
 (def Squirtle #{"Blue" "blue" "Water" "water"})
 
 ```
+### Sorting Pokemon 
+In order to find the pokemons more easily, we had to create a code that sorting pokemons per park. Here is the codes we created:
+```clojure
+
+(defn whatPokemon [y]
+  (newline)
+  (println "What is the name of the Pokemon ?")
+  (Thread/sleep 1000)
+  (cond
+    (= y "1") (pokemonBert)
+    (= y "2") (pokemonFran)
+    (= y "3") (pokemonObor)
+    (= y "4") (pokemonKamp)
+    (= y "5") (pokemonKins)
+    (= y "6") (pokemonKlam)))
+    
+```
+### Pokemon Location
+To locate pokemon more easily, we have created functions that allow them to be found in parks. Here is an example of one function Pokemon Location:
+```clojure
+
+(defn pokemonBert []
+  (let [c (read-line)]
+    (newline) (Thread/sleep 1000)
+    (cond
+      (contains? BertramkaP c) [(println "Yes, there is some" c "in Bertramka") (whatPokemonColor c)]
+      (contains? Exitline c) (exit-f)
+      :else [(println "This pokemon cannot be in Bertramka") (println "What is the name of the Pokemon again ?") (pokemonBert)])))
+
+``` 
+### Pokemon Color Sorting 
+To find the pokemon more easily we have created a function which allows them to be sorted by color. We also had to add parameters so that the chatbot recognizes the name of the pokemon regardless of the writing.Here is the codes we created:
+```clojure
+
+(defn whatPokemonColor [c]
+  (newline)
+  (println "What was the color of the Pokemon ?")
+  (cond
+    (= c "Pikachu") (pikachuColor)
+    (= c "pikachu") (pikachuColor)
+    (= c "Squirtle") (squirtleColor)
+    (= c "squirtle") (squirtleColor)
+    (= c "Charmender") (charmenderColor)
+    (= c "charmender") (charmenderColor)
+    (= c "Bulbasaur") (bulbasaurColor)
+    (= c "bulbasaur") (bulbasaurColor)))
+    
+``` 
+
+### Pokemon Color Cheking
+To find the pokemon more easily, we have written a function that allows you to check the color of the pokemon.Here is an example of one function Pokemon Color Cheking:
+```clojure
+
+(defn pikachuColor []
+  (let [color (read-line)]
+    (newline) (Thread/sleep 1000)
+    (cond
+      (contains? PikachuC color) [(println "Yes, the color of Pikachu is" color ".") (pikachuElem)]
+      (contains? Exitline color) (exit-f)
+      :else [(println "Pikachu isn't" color "! You certainly saw a different Pokemon.") (println "What was the Pokemon color again ?") (pikachuColor)])))
+
+```
+
+### Pokemon Elements
+To more easily identify the pokemon we have created a function which allows you to know which element is the pokemon. Here is an example of one function Pokemon Elements:
+```clojure 
+(defn pikachuElem []
+  (newline)
+  (println "Did you see the Pokemon Element type ?")
+  (let [Element (read-line)]
+    (newline) (Thread/sleep 1000)
+    (cond
+      (contains? pikachuE Element) [(println "Yes, Pikachu is a" Element "type Pokemon.")
+                                    (println "Congratulations, you found a Pikachu !")]
+      (contains? Negative Element) [(println "Too bad, i can't tell if you found a Pikachu or not.")(pikachuElem)]
+      :else [(err-f) (pikachuElem)])))
+      
+```
 
 
 ### Authors
