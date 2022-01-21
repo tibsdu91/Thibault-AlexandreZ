@@ -200,55 +200,13 @@
     (= y "Letna") (pokemonLetn)))
 
 
-;; -- Allows to change park location --
-(defn ListPark []
-  (newline)
-  (println "Here is a list of the recommended parks :")
-  (Thread/sleep 1000)
-  (newline)
-  (println Parks)
-  (Thread/sleep 1000)
-  (println "Please enter exactly the name of the park where you want recommendations")
-  (let [y (read-line)]
-    (cond
-      (newline) (Thread/sleep 1000)
-      (contains? Parks y) [(println "You have selected :" y)
-                           (cond
-                             (newline) (Thread/sleep 1000)
-                             [(= y "Kampa")
-                              (= y "Vysehrad")
-                              (= y "Rajska-Zahrada")
-                              (= y "Dobeaka")
-                              (= y "Kinskeho-Zahrada")
-                              (= y "Letna")] (whatPokemon y))]
-      (contains? Exitline y) (exit-f)
-      :else (str (err-f) (ListPark)))))
-
-
-;; -- State and change of park --
-(defn changePark [y]
-  (newline)
-  (println "The search of Pokemon is currently into :" y)
-  (Thread/sleep 1000)
-  (newline)
-  (println "Do you want to search for a pokemon in this park" y)
-  (println "or do you want to change park ? [Stay/Change]")
-  (Thread/sleep 1000)
-  (let [change (read-line)]
-    (cond
-    (= change "stay") [(println "You have selected : Stay") (whatPokemon y)]
-    (= change "Stay") [(println "You have selected : Stay") (whatPokemon y)]
-    (= change "change") [(println "You have selected : Change") (ListPark)]
-    (= change "Change") [(println "You have selected : Change") (ListPark)])))
-
-
 (defn pokemonSight [y]
   (newline)
   (println "Do you need help to identify some kind of Pokemon you saw? [Y/N]")
   (Thread/sleep 1000)
   (let [a (read-line)]
     (cond
-      (contains? Positive a) (changePark y)
+      (contains? Positive a) (whatPokemon y)
       (contains? Negative a) (exit-f))))
 
 
@@ -345,6 +303,7 @@
       (= a "pokemon") (pokemonSight y))))
 
 
+
 ;; -- Allows to do a loop --
 (defn numer []
   (newline)
@@ -367,12 +326,54 @@
     (= y "Kinskeho-Zahrada") (activities y)
     (= y "Letna") (activities y)))
 
+;; -- Allows to change park location --
+(defn ListPark []
+  (newline)
+  (println "Here is a list of the recommended parks :")
+  (Thread/sleep 1000)
+  (newline)
+  (println Parks)
+  (Thread/sleep 1000)
+  (println "Please enter exactly the name of the park where you want recommendations")
+  (let [y (read-line)]
+    (cond
+      (newline) (Thread/sleep 1000)
+      (contains? Parks y) [(println "You have selected :" y)
+                           (cond
+                             (newline) (Thread/sleep 1000)
+                             [(= y "Kampa")
+                              (= y "Vysehrad")
+                              (= y "Rajska-Zahrada")
+                              (= y "Dobeaka")
+                              (= y "Kinskeho-Zahrada")
+                              (= y "Letna")] (numer-2 y))]
+      (contains? Exitline y) (exit-f)
+      :else (str (err-f) (ListPark)))))
+
+;; -- State and change of park --
+(defn changePark [y]
+  (Thread/sleep 1000)
+  (newline)
+  (println "Do you want to change park ? [Y/N]")
+  (Thread/sleep 1000)
+  (let [change (read-line)]
+    (cond
+      (contains? Positive change) [(ListPark)]
+      (contains? Negative change) [(whatPokemon y)])))
+
+(defn usersure [y]
+  (newline)
+  (let [response (read-line)]
+    (cond
+      (contains? Positive response) (numer-2 y)
+      (contains? Negative response) (changePark y))))
+
 (defn numer-f []
   (numer)
   (let [y (read-line)]
     (cond
       (newline) (Thread/sleep 1000)
-      (contains? Parks y) [(println "You have selected :" y) (numer-2 y)]
+      (contains? Parks y) [(println "You have selected :" y)(println "Are you sure ? [Y/N]")(usersure y)]
       (contains? Exitline y) (exit-f)
       :else (str (err-f) (numer-f)))))
 
